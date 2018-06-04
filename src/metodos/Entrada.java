@@ -69,15 +69,13 @@ public class Entrada extends JFrame {
 		 textField = new TextField();
 		textField.setBounds(181, 110, 142, 19);
 		contentPane.add(textField);
-		
-		
 	}
 	
 	private void ponerEventoAlBotonCalcular() {
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==btnCalcular){
-					new Calculo(getMemoria());
+					new Tabla(getMemoria());
 				}
 				
 			}
