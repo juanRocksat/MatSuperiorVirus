@@ -4,22 +4,23 @@ public abstract class Algoritmos {
 	public double memoria ;	
 	public int n =0;
 	public double x0,xn,ef,cotaInferior,cotaSuperior,xAnterior=x0; 
-	
+	public double cotaDeError=(double)1e-5;
 	public double f(double x) {
 		return (2*(Math.pow(2, x))+512*100*x+2048)/1024;
 	}// en megabytes
 	public abstract double aproximar();
-	public  abstract double aproximar(double cotaInferior, double cotaSuperior) ;
-	public boolean criterioDeParo(double errorMaximo) {
-		return errorMaximo>Math.abs(xAnterior-xn) && errorMaximo>f(xn);
+//	public  abstract double aproximar(double cotaInferior, double cotaSuperior) ;
+	public boolean criterioDeParo() {
+		return cotaDeError>Math.abs(xAnterior-xn) && cotaDeError>f(xn);
 	}
-	public boolean criterioDeParo_xn(double errorMaximo) {
-		return  errorMaximo>f(xn);
+	public boolean criterioDeParo_xn() {
+		return  cotaDeError>f(xn);
 	}
-	public boolean criterioDeParo_xn_xAnt(double errorMaximo) {
-		return errorMaximo>Math.abs(xAnterior-xn);
+	public boolean criterioDeParo_xn_xAnt() {
+		return cotaDeError>Math.abs(xAnterior-xn);
 	}
-	public boolean imagenesIguales(double a , double b) {
+	
+	public boolean signosIguales(double a , double b) {
 		int a_=(int)a;
 		int b_=(int)b;
 		return a_*b_>0;
