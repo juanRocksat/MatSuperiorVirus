@@ -38,7 +38,6 @@ public abstract class Algoritmos_v1 {
 		float b_=(float)b;
 		return a_*b_>0;
 	}
-	
 	//GETTETS Y SETTERS
 	public final double getMemoria() {
 		return memoria;
@@ -88,6 +87,5 @@ public abstract class Algoritmos_v1 {
 	public final void setxAnterior(double xAnterior) {
 		this.xAnterior = xAnterior;
 	}
-	
-	
+
 }
