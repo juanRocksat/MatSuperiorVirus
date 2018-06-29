@@ -90,6 +90,4 @@ public abstract class Algoritmos_v1 {
 	}
 	
 	
-	
-	
 }
