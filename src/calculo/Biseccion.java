@@ -1,10 +1,12 @@
 package calculo;
 
-public class Biseccion extends Algoritmos{
+import datos.Datos;
+
+public class Biseccion extends Algoritmos_v1{
 	
-	double imagenActual = 0;
+//	double imagenActual = 0;
 	double imagenCotaInferior,imagenCotaSuperior;
-	public Biseccion() {
+	public Biseccion(Datos datos) {
 		x0=(cotaSuperior+cotaInferior)/2;
 		xn=x0;
 	}
@@ -15,23 +17,17 @@ public class Biseccion extends Algoritmos{
 		x0=(cotaSuperior_+cotaInferior_)/2;
 		xn=x0;
 	}
-	private void seteos() {
+	public void seteos() {
 		imagenActual=this.f(xn);
-		imagenCotaInferior=f(cotaInferior);
-		imagenCotaSuperior=f(cotaSuperior);
+		imagenCotaInferior=this.f(cotaInferior);
+		imagenCotaSuperior=this.f(cotaSuperior);
 		n++;
-		if(signosIguales(imagenCotaInferior, imagenActual)) {
+		if(signosIguales(imagenCotaInferior, this.imagenActual)) {
 			cotaInferior=xn;
 		}
 		else {
 			cotaSuperior=xn;
 		}
 	}
-	@Override
-	public double aproximar() {
-		// TODO Auto-generated method stub
-		 for(this.n=0;this.criterioDeParo();this.seteos()); //en computacion el for y el this lo hacen mas rapido, visto desde el lenguage C
-		 return imagenActual;
-	}
-
+	
 }

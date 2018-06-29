@@ -1,28 +1,41 @@
 package calculo;
 
-public abstract class Algoritmos {
+public abstract class Algoritmos_v1 {
 	public double memoria ;	
 	public int n =0;
 	public double x0,xn,ef,cotaInferior,cotaSuperior,xAnterior=x0; 
 	public double cotaDeError=(double)1e-5;
+	public double imagenActual=0   ;
 	public double f(double x) {
 		return (2*(Math.pow(2, x))+512*100*x+2048)/1024;
 	}// en megabytes
-	public abstract double aproximar();
+
 //	public  abstract double aproximar(double cotaInferior, double cotaSuperior) ;
 	public boolean criterioDeParo() {
 		return cotaDeError>Math.abs(xAnterior-xn) && cotaDeError>f(xn);
 	}
-	public boolean criterioDeParo_xn() {
+	public boolean criterioDeParo1() {
 		return  cotaDeError>f(xn);
 	}
-	public boolean criterioDeParo_xn_xAnt() {
+	public double aproximar_criterio_1() {
+		// TODO Auto-generated method stub
+		 for(this.n=0;this.criterioDeParo1();this.seteos()); //en computacion el for y el this lo hacen mas rapido, visto desde el lenguage 	 
+		return imagenActual;
+	}
+	public double aproximar_criterio_2(){
+
+		 for(this.n=0;this.criterioDeParo2();this.seteos()); //en computacion el for y el this lo hacen mas rapido, visto desde el lenguage 	 
+		return imagenActual;
+	}
+	public abstract  void seteos();
+
+	public boolean criterioDeParo2() {
 		return cotaDeError>Math.abs(xAnterior-xn);
 	}
 	
 	public boolean signosIguales(double a , double b) {
-		int a_=(int)a;
-		int b_=(int)b;
+		float a_=(float)a;
+		float b_=(float)b;
 		return a_*b_>0;
 	}
 	

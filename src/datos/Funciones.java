@@ -1,0 +1,25 @@
+package datos;
+
+public abstract class Funciones implements Funciones_f{
+	double cotaSuperior,cotaInferior,cotaDeError;
+	public Funciones(double cotaSuperior_,double cotaInferior_,double cotaDeError_) {
+		this.setCotaInferior(cotaInferior_);
+		this.setCotaSuperior(cotaSuperior_);
+		this.cotaDeError=cotaDeError_;
+	}
+	
+	public double getCotaSuperior() {
+		return cotaSuperior;
+	}
+	public void setCotaSuperior(double cotaSuperior) {
+		this.cotaSuperior = cotaSuperior;
+	}
+	public double getCotaInferior() {
+		return cotaInferior;
+	}
+	public void setCotaInferior(double cotaInferior) {
+		this.cotaInferior = cotaInferior;
+	};
+	
+	
+}
