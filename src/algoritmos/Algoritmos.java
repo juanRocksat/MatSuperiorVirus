@@ -7,21 +7,53 @@ import iteracion_registro.Iteracion;
 import iteracion_registro.Iteracion_criterio_1;
 import iteracion_registro.Iteracion_criterio_2;
 
-public class Algoritmos {
-	public double x0,xn,puntoFijo,cotaInferior,cotaSuperior,xAnterior,criterioDeParo; 
+public abstract class Algoritmos {
+	public double n,x0,xn,puntoFijo,cotaInferior,cotaSuperior,xAnterior,cotaDeError;
+	public double f_xn;
 	public Iteracion iteracionCriterio1=null;
 	public Iteracion iteracionCriterio2=null;
 	public ArrayList<Iteracion_criterio_2> lista_criterio2 =null;
 	public ArrayList<Iteracion_criterio_1> lista_criterio1 =null;
-	
+	public Datos datos=null;
 	public Algoritmos(Datos datos) {
 		setCotaInferior(datos.getCotaInferior());
 		setCotaSuperior(datos.getCotaSuperior());
 	}
-	
-	
-	
-	
+	abstract void preparar();
+	void iterar() {
+		iterarCriterio1();
+		iterarCriterio2();
+	}
+	public void iterarCriterio1() {
+		for(this.preparar();this.criterioDeParo1();this.calcularProximo()) {			
+		}
+	}
+	public void iterarCriterio2() {
+		for(this.preparar();this.criterioDeParo2();this.calcularProximo()) {
+		}
+	}
+	public  void registrar() {
+		this.registrarCriterio1();
+		this.registrarCriterio2();
+	}
+	public void registrarCriterio1() {
+		this.getLista_criterio1().add(new Iteracion_criterio_1(this.n, this.getXn(), this.f_xn));
+	}
+	public void registrarCriterio2() {
+		this.getLista_criterio2().add(new Iteracion_criterio_2(this.n, this.getXn(), this.f_xn));
+	}
+	abstract void calcularProximo() ;
+	public boolean criterioDeParo1() {
+		return  this.cotaDeError>this.datos.f(xn);
+	}
+	public boolean criterioDeParo2() {
+		return this.cotaDeError>Math.abs(xAnterior-xn);
+	}
+	public boolean signosIguales(double a , double b) {
+		float a_=(float)a;
+		float b_=(float)b;
+		return a_*b_>0;
+	}
 	
 	
 	//ACCESORS
@@ -71,14 +103,6 @@ public class Algoritmos {
 
 	public void setxAnterior(double xAnterior) {
 		this.xAnterior = xAnterior;
-	}
-
-	public double getCriterioDeParo() {
-		return criterioDeParo;
-	}
-
-	public void setCriterioDeParo(double criterioDeParo) {
-		this.criterioDeParo = criterioDeParo;
 	}
 
 	public Iteracion getIteracionCriterio1() {

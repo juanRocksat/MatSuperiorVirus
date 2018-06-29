@@ -5,6 +5,20 @@ public class NewtonRaphson extends Algoritmos{
 
 	public NewtonRaphson(Datos datos) {
 		super(datos);
-		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	void preparar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void calcularProximo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
 }
