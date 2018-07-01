@@ -3,6 +3,7 @@ package algoritmos;
 import java.util.ArrayList;
 
 import datos.Datos;
+import datos.ListaDeDatos;
 import iteracion_registro.Iteracion;
 import iteracion_registro.Iteracion_criterio_1;
 import iteracion_registro.Iteracion_criterio_2;
@@ -21,14 +22,14 @@ public abstract class Algoritmos {
 	}
 	abstract void preparar();
 	void iterar() {
-		iterarCriterio1();
-		iterarCriterio2();
+		correrConCriterio1();
+		correrConCriterio2();
 	}
-	public void iterarCriterio1() {
+	public void correrConCriterio1() {
 		for(this.preparar();this.criterioDeParo1();this.calcularProximo()) {			
 		}
 	}
-	public void iterarCriterio2() {
+	public void correrConCriterio2() {
 		for(this.preparar();this.criterioDeParo2();this.calcularProximo()) {
 		}
 	}
@@ -54,6 +55,7 @@ public abstract class Algoritmos {
 		float b_=(float)b;
 		return a_*b_>0;
 	}
+	abstract ListaDeDatos getDatos();
 	
 	
 	//ACCESORS

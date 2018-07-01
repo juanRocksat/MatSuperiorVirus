@@ -1,5 +1,6 @@
 package algoritmos;
 import datos.Datos;
+import datos.ListaDeDatos;
 
 public class NewtonRaphson extends Algoritmos{
 
@@ -19,6 +20,15 @@ public class NewtonRaphson extends Algoritmos{
 		
 	}
 
+	@Override
+	ListaDeDatos getDatos() {
+		ListaDeDatos lista_pf=new ListaDeDatos("PuntoFijo");
+		lista_pf.getListaDeCriterio1().addAll(this.getLista_criterio1());
+		lista_pf.getListaDeCriterio2().addAll(this.getLista_criterio2());
+		return lista_pf;
+	}
+
+	
 	
 
 }
