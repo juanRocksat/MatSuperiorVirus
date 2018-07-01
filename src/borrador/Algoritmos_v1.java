@@ -1,4 +1,4 @@
-package calculo;
+package borrador;
 
 public abstract class Algoritmos_v1 {
 	public double memoria ;	

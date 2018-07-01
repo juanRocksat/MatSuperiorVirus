@@ -1,4 +1,4 @@
-package iteracion_registro;
+package registro_de_iteracion;
 
 public abstract class Iteracion {
 	double n,xn,f_xn;

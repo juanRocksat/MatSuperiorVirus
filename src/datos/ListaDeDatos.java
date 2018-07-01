@@ -2,9 +2,9 @@ package datos;
 
 import java.util.ArrayList;
 
-import iteracion_registro.Iteracion;
-import iteracion_registro.Iteracion_criterio_1;
-import iteracion_registro.Iteracion_criterio_2;
+import registro_de_iteracion.Iteracion;
+import registro_de_iteracion.Iteracion_criterio_1;
+import registro_de_iteracion.Iteracion_criterio_2;
 
 public class ListaDeDatos {
 	String metodo=null;
