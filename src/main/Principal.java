@@ -29,10 +29,10 @@ public class Principal {
 	}
 	public static void main(String[] args) {
 		Principal p =new Principal();
-		Datos datos=new Datos(0,1,(double)1e-5) {
+		Datos datos=new Datos(1,2,(double)1e-2) {
 			@Override
 			public double f(double x) {
-				return (2*(Math.pow(2, x))+512*100*x+2048)/1024;
+				return (double)((Math.pow(Math.E, x))-4+x);
 			}
 			@Override
 			public double f1(double x) {return 0;}

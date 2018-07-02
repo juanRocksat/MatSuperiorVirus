@@ -21,7 +21,7 @@ public abstract class Algoritmos {
 		setCotaSuperior(datos.getCotaSuperior());
 	}
 	abstract void preparar();
-	void iterar() {
+	public void correr() {
 		correrConCriterio1();
 		correrConCriterio2();
 	}

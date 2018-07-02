@@ -52,7 +52,7 @@ public class Biseccion_v2 extends Algoritmos{
 		return lista_pf;
 	}
 	@Override
-	void iterar() {
+	public void correr() {
 		correrConCriterio1();
 		correrConCriterio2();
 	}
@@ -72,6 +72,7 @@ public class Biseccion_v2 extends Algoritmos{
 	}
 
 	public void mostrarResultadoParaTest() {
+		this.correr();
 		for (int i = 0; i < lista_criterio1.size(); i++) {
 			Iteracion_criterio_1 registro = lista_criterio1.get(i);
 			System.out.println("("+registro.getN()+","+registro.getXn()+","+registro.getF_xn()+")");
