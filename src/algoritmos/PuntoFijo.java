@@ -28,6 +28,18 @@ public class PuntoFijo extends Algoritmos{
 		return lista_pf;
 	}
 
+	@Override
+	void correrConCriterio1() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void correrConCriterio2() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	
 }
