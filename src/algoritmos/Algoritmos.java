@@ -15,7 +15,7 @@ public abstract class Algoritmos {
 	public Iteracion_criterio_2 iteracionCriterio2=null;
 	public ArrayList<Iteracion_criterio_2> lista_criterio2 =null;
 	public ArrayList<Iteracion_criterio_1> lista_criterio1 =null;
-	public Datos datos;
+	public Datos datos=null;
 //	public Algoritmos(Datos datos) {
 //		setCotaInferior(datos.getCotaInferior());
 //		setCotaSuperior(datos.getCotaSuperior());
@@ -30,7 +30,7 @@ public abstract class Algoritmos {
 	
 	public void registrarCriterio1() {
 		this.iteracionCriterio1=new Iteracion_criterio_1(this.n, this.xn, this.f_xn);
-		this.getLista_criterio1().add(this.iteracionCriterio1);
+		this.lista_criterio1.add(this.iteracionCriterio1);
 	}
 	public void registrarCriterio2() {
 		this.iteracionCriterio2=new Iteracion_criterio_2(this.n, this.xn, this.f_xn);

@@ -38,9 +38,20 @@ public class Principal {
 			public double f2(double x) {return 0;}
 			@Override
 			public double f3(double x) {return 0;}
+			@Override
+			public double f4(double x) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			@Override
+			public double g(double x) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
 		};
 		Biseccion_v2 biseccion= new Biseccion_v2(datos);
 		biseccion.mostrarResultadoParaTest();
+		
 		
 		p.saludar("Hola");
 		double x1 =datos.f(1); 

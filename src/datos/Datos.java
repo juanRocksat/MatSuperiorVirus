@@ -1,43 +1,36 @@
 package datos;
 
-public class Datos extends Funciones{
-
+public abstract class Datos {
+	double cotaSuperior,cotaInferior,cotaDeError;
 	public Datos( double cotaInferior_,double cotaSuperior_, double cotaDeError_) {
 		this.setCotaInferior(cotaInferior_);
 		this.setCotaSuperior(cotaSuperior_);
 		this.cotaDeError=cotaDeError_;
 	}
-
-	@Override
-	public double f(double x) {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getCotaSuperior() {
+		return cotaSuperior;
 	}
-
-	@Override
-	public double f1(double x) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void setCotaSuperior(double cotaSuperior) {
+		this.cotaSuperior = cotaSuperior;
 	}
-
-	@Override
-	public double f2(double x) {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getCotaInferior() {
+		return cotaInferior;
 	}
-
-	@Override
-	public double f3(double x) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void setCotaInferior(double cotaInferior) {
+		this.cotaInferior = cotaInferior;
 	}
-
-	@Override
-	public double f4(double x) {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getCotaDeError() {
+		return cotaDeError;
 	}
-	
-	
+	public void setCotaDeError(double cotaDeError) {
+		this.cotaDeError = cotaDeError;
+	};
+
+	public abstract double f(double x) ;//{return 0;}
+	public abstract double f1(double x);//{return 0;}//derivada primera
+	public abstract double f2(double x);//{return 0;}//derivada segunda
+	public abstract double f3(double x);//{return 0;}
+	public abstract double f4(double x);//{return 0;}
+	public abstract double g(double x);
 	
 }

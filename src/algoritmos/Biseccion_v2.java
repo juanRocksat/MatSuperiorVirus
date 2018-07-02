@@ -80,8 +80,9 @@ public class Biseccion_v2 extends Algoritmos{
 	}
 
 	public void mostrarResultadoParaTest() {
-//		this.correr();
-		for (int i = 0; i < this.getLista_criterio1().size(); i++) {
+		this.correr();
+		int cant = this.getLista_criterio1().size();
+		for (int i = 1; i < cant+1; i++) {
 			Iteracion_criterio_1 registro = lista_criterio1.get(i);
 			System.out.println("("+registro.getN()+","+registro.getXn()+","+registro.getF_xn()+")");
 		}
