@@ -51,8 +51,6 @@ public class Principal {
 		};
 		Biseccion_v2 biseccion= new Biseccion_v2(datos);
 		biseccion.mostrarResultadoParaTest();
-		
-		
 		p.saludar("Hola");p.saludar("Hola");
 		p.saludar("Hola");p.saludar("Hola");
 		double x1 =datos.f(1); 
