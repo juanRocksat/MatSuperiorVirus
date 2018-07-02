@@ -53,7 +53,8 @@ public class Principal {
 		biseccion.mostrarResultadoParaTest();
 		
 		
-		p.saludar("Hola");
+		p.saludar("Hola");p.saludar("Hola");
+		p.saludar("Hola");p.saludar("Hola");
 		double x1 =datos.f(1); 
 		p.saludar(Double.toString(x1));
 	}
