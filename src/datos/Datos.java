@@ -2,10 +2,8 @@ package datos;
 
 public class Datos extends Funciones{
 
-	
-
-	public Datos(double cotaSuperior_, double cotaInferior_, double cotaDeError_) {
-		super(cotaSuperior_, cotaInferior_, cotaDeError_);
+	public Datos( double cotaInferior_,double cotaSuperior_, double cotaDeError_) {
+		super( cotaInferior_,cotaSuperior_, cotaDeError_);
 	}
 
 	@Override

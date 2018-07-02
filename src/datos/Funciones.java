@@ -2,7 +2,7 @@ package datos;
 
 public abstract class Funciones implements Funciones_f{
 	double cotaSuperior,cotaInferior,cotaDeError;
-	public Funciones(double cotaSuperior_,double cotaInferior_,double cotaDeError_) {
+	public Funciones(double cotaInferior_,double cotaSuperior_,double cotaDeError_) {
 		this.setCotaInferior(cotaInferior_);
 		this.setCotaSuperior(cotaSuperior_);
 		this.cotaDeError=cotaDeError_;

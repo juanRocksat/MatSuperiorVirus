@@ -2,9 +2,7 @@ package main;
 import algoritmos.Biseccion_v2;
 import algoritmos.NewtonRaphson;
 import algoritmos.PuntoFijo;
-import borrador.Biseccion;
 import datos.Datos;
-import datos.Funciones_f;
 
 public class Principal {
 //	public static void main(String[] args) {
@@ -24,8 +22,8 @@ public class Principal {
 //		NewtonRaphson newtonR = new NewtonRaphson(datos);
 //		PuntoFijo puntoFijo = new PuntoFijo(datos);
 //	}
-	private void saludar() {
-		System.out.println("Hola "); 
+	private void saludar(String saludo) {
+		System.out.println(saludo); 
 	}
 	public static void main(String[] args) {
 		Principal p =new Principal();
@@ -44,7 +42,9 @@ public class Principal {
 		Biseccion_v2 biseccion= new Biseccion_v2(datos);
 		biseccion.mostrarResultadoParaTest();
 		
-		p.saludar();
+		p.saludar("Hola");
+		double x1 =datos.f(1); 
+		p.saludar(Double.toString(x1));
 	}
 
 

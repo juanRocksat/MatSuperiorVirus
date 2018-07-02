@@ -9,6 +9,7 @@ import registro_de_iteracion.Iteracion_criterio_1;
 
 public class Biseccion_v2 extends Algoritmos{
 
+	double imagenCotaInferior,imagenCotaSuperior;
 	public Biseccion_v2(Datos datos) {
 		super(datos);
 	}
@@ -19,7 +20,9 @@ public class Biseccion_v2 extends Algoritmos{
 		this.x0=(this.getCotaInferior()+this.getCotaSuperior())/2;
 		this.xn=this.x0;
 		this.f_xn=this.datos.f(this.xn);
-		if(this.signosIguales(this.f_xn, this.getCotaInferior())) {
+		this.imagenCotaInferior=this.datos.f(this.getCotaInferior());
+//		this.imagenCotaSuperior=this.datos.f(this.getCotaSuperior());
+		if(this.signosIguales(this.f_xn, this.imagenCotaInferior)) {
 			this.setCotaInferior(this.xn);
 		}
 		else {
@@ -32,7 +35,7 @@ public class Biseccion_v2 extends Algoritmos{
 
 	@Override
 	void calcularProximo() {
-		if(this.signosIguales(this.f_xn, this.getCotaInferior())) {
+		if(this.signosIguales(this.f_xn, this.imagenCotaInferior)) {
 			this.setCotaInferior(this.xn);
 		}
 		else {
