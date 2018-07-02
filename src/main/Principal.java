@@ -46,6 +46,4 @@ public class Principal {
 		double x1 =datos.f(1); 
 		p.saludar(Double.toString(x1));
 	}
-
-
 }
