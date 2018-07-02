@@ -7,9 +7,9 @@ import datos.Datos;
 import datos.ListaDeDatos;
 import registro_de_iteracion.Iteracion_criterio_1;
 
-public class Biseccion extends Algoritmos{
+public class Biseccion_v2 extends Algoritmos{
 
-	public Biseccion(Datos datos) {
+	public Biseccion_v2(Datos datos) {
 		super(datos);
 	}
 
@@ -71,10 +71,10 @@ public class Biseccion extends Algoritmos{
 		}
 	}
 
-	public void motrarResultadoParaTest() {
+	public void mostrarResultadoParaTest() {
 		for (int i = 0; i < lista_criterio1.size(); i++) {
 			Iteracion_criterio_1 registro = lista_criterio1.get(i);
-			System.out.println(registro);
+			System.out.println("("+registro.getN()+","+registro.getXn()+","+registro.getF_xn()+")");
 		}
 	}
 
