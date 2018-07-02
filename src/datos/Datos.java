@@ -3,7 +3,9 @@ package datos;
 public class Datos extends Funciones{
 
 	public Datos( double cotaInferior_,double cotaSuperior_, double cotaDeError_) {
-		super( cotaInferior_,cotaSuperior_, cotaDeError_);
+		this.setCotaInferior(cotaInferior_);
+		this.setCotaSuperior(cotaSuperior_);
+		this.cotaDeError=cotaDeError_;
 	}
 
 	@Override
@@ -35,5 +37,7 @@ public class Datos extends Funciones{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	
 	
 }

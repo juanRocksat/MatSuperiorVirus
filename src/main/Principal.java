@@ -27,7 +27,7 @@ public class Principal {
 	}
 	public static void main(String[] args) {
 		Principal p =new Principal();
-		Datos datos=new Datos(1,2,(double)1e-2) {
+		Datos datos=new Datos((double)1,(double)2,(double)1e-2) {
 			@Override
 			public double f(double x) {
 				return (double)((Math.pow(Math.E, x))-4+x);

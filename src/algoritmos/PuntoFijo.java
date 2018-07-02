@@ -5,7 +5,7 @@ import datos.ListaDeDatos;
 
 public class PuntoFijo extends Algoritmos{
 	public PuntoFijo(Datos datos) {
-		super(datos);
+//		super(datos);
 	}
 
 	@Override

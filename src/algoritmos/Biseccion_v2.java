@@ -1,6 +1,5 @@
 package algoritmos;
 
-import java.awt.List;
 import java.util.Iterator;
 
 import datos.Datos;
@@ -10,8 +9,13 @@ import registro_de_iteracion.Iteracion_criterio_1;
 public class Biseccion_v2 extends Algoritmos{
 
 	double imagenCotaInferior,imagenCotaSuperior;
-	public Biseccion_v2(Datos datos) {
-		super(datos);
+	
+	public Biseccion_v2(Datos datos_) {
+		this.setCotaInferior(datos_.getCotaInferior());
+		this.setCotaSuperior(datos_.getCotaSuperior());
+		this.cotaDeError=datos_.getCotaDeError();
+		this.datos=datos_;
+		this.correr();
 	}
 
 	@Override
@@ -35,6 +39,7 @@ public class Biseccion_v2 extends Algoritmos{
 
 	@Override
 	void calcularProximo() {
+		this.imagenCotaInferior=this.datos.f(this.getCotaInferior());
 		if(this.signosIguales(this.f_xn, this.imagenCotaInferior)) {
 			this.setCotaInferior(this.xn);
 		}
@@ -49,15 +54,15 @@ public class Biseccion_v2 extends Algoritmos{
 
 	@Override
 	ListaDeDatos getDatos() {
-		ListaDeDatos lista_pf=new ListaDeDatos("PuntoFijo");
+		ListaDeDatos lista_pf=new ListaDeDatos("Biseccion");
 		lista_pf.getListaDeCriterio1().addAll(this.getLista_criterio1());
 		lista_pf.getListaDeCriterio2().addAll(this.getLista_criterio2());
 		return lista_pf;
 	}
 	@Override
 	public void correr() {
-		correrConCriterio1();
-		correrConCriterio2();
+		this.correrConCriterio1();
+		this.correrConCriterio2();
 	}
 
 	@Override
@@ -75,8 +80,8 @@ public class Biseccion_v2 extends Algoritmos{
 	}
 
 	public void mostrarResultadoParaTest() {
-		this.correr();
-		for (int i = 0; i < lista_criterio1.size(); i++) {
+//		this.correr();
+		for (int i = 0; i < this.getLista_criterio1().size(); i++) {
 			Iteracion_criterio_1 registro = lista_criterio1.get(i);
 			System.out.println("("+registro.getN()+","+registro.getXn()+","+registro.getF_xn()+")");
 		}

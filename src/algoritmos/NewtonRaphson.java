@@ -5,7 +5,7 @@ import datos.ListaDeDatos;
 public class NewtonRaphson extends Algoritmos{
 
 	public NewtonRaphson(Datos datos) {
-		super(datos);
+	
 	}
 
 	@Override
