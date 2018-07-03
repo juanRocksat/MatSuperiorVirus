@@ -15,14 +15,16 @@ public class NewtonRaphson extends Algoritmos{
 	}
 	@Override
 	void preparar() {
-		// TODO Auto-generated method stub
+		this.n=1;
+		this.xAnterior=this.x0; 
+		this.xn=this.x0+1;//para que no pare en la primera iteracion 
 		
 	}
 
 	@Override
 	void calcularProximo() {
-		// TODO Auto-generated method stub
-		
+		this.xAnterior=this.xn;
+		this.xn=xAnterior-(datos.f(xAnterior)/datos.f1(xAnterior));
 	}
 
 	@Override
@@ -30,15 +32,30 @@ public class NewtonRaphson extends Algoritmos{
 		ListaDeDatos lista_pf=new ListaDeDatos("PuntoFijo");
 		return lista_pf;
 	}
+	
+	@SuppressWarnings("null")
 	@Override
-	ArrayList<Iteracion> correrConCriterioDeParo1(ArrayList<Iteracion> iteracionCriterio1) {
-		// TODO Auto-generated method stub
-		return null;
+	void correrConCriterioDeParo1() {
+		ArrayList<Iteracion> iteracionCriterio1=null;//suprime algun error de este null, es lista vacia por eso el null
+		this.preparar();
+		iteracionCriterio1.add(new Iteracion(this.n, this.xn, this.f_xn));
+		while (this.criterioDeParo1()) {
+			calcularProximo();
+			iteracionCriterio1.add(new Iteracion(this.n, this.xn, this.f_xn));
+		}
+//		return iteracionCriterio1;
 	}
+	@SuppressWarnings("null")
 	@Override
-	ArrayList<Iteracion> correrConCriterioDeParo2(ArrayList<Iteracion> iteracionCriterio2) {
-		// TODO Auto-generated method stub
-		return null;
+	void correrConCriterioDeParo2() {
+		ArrayList<Iteracion> iteracionCriterio2=null;
+		this.preparar();
+		iteracionCriterio2.add(new Iteracion(this.n, this.xn, this.f_xn));
+		while (this.criterioDeParo2()) {
+			calcularProximo();
+			iteracionCriterio2.add(new Iteracion(this.n, this.xn, this.f_xn));
+		}
+//		return iteracionCriterio2;
 	}
 
 

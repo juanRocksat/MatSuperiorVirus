@@ -4,18 +4,19 @@ import java.util.ArrayList;
 
 import datos.Datos;
 import datos.ListaDeDatos;
-import registro_de_iteracion.Iteracion;
 
 public abstract class Algoritmos {
-	public double n,xn,cotaInferior,cotaSuperior,xAnterior,cotaDeError;
+	public double n=0,xn,cotaInferior=0,cotaSuperior=0,xAnterior=0,cotaDeError=0;
 	public double f_xn;
 	public Datos datos=null;
+	public ArrayList<Integer>  lista_de_n=null;
+	public ArrayList<Double> lista_de_xn=null,lista_de_f_xn;
 	public Algoritmos(Datos _datos) {
 		this.datos=_datos;
 	}
 //	abstract void correr();
-	abstract ArrayList<Iteracion> correrConCriterioDeParo1(ArrayList<Iteracion> iteracionCriterio1);
-	abstract ArrayList<Iteracion> correrConCriterioDeParo2(ArrayList<Iteracion> iteracionCriterio2);
+	abstract void correrConCriterioDeParo1();
+	abstract void correrConCriterioDeParo2();
 	abstract void preparar();
 	
 	abstract void calcularProximo() ;

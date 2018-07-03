@@ -28,9 +28,9 @@ public abstract class Datos {
 
 	public abstract double f(double x) ;//{return 0;}
 	public abstract double f1(double x);//{return 0;}//derivada primera
-	public abstract double f2(double x);//{return 0;}//derivada segunda
-	public abstract double f3(double x);//{return 0;}
-	public abstract double f4(double x);//{return 0;}
+//	public abstract double f2(double x);//{return 0;}//derivada segunda
+//	public abstract double f3(double x);//{return 0;}
+//	public abstract double f4(double x);//{return 0;}
 	public abstract double g(double x);
 	
 }

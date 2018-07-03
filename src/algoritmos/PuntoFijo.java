@@ -1,11 +1,17 @@
 package algoritmos;
 
+import java.util.ArrayList;
+
 import datos.Datos;
 import datos.ListaDeDatos;
+import registro_de_iteracion.Iteracion;
 
 public class PuntoFijo extends Algoritmos{
-	public PuntoFijo(Datos datos) {
-//		super(datos);
+	
+
+	public PuntoFijo(Datos _datos) {
+		super(_datos);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -23,22 +29,24 @@ public class PuntoFijo extends Algoritmos{
 	@Override
 	ListaDeDatos getDatos() {
 		ListaDeDatos lista_pf=new ListaDeDatos("PuntoFijo");
-		lista_pf.getListaDeCriterio1().addAll(this.getLista_criterio1());
-		lista_pf.getListaDeCriterio2().addAll(this.getLista_criterio2());
 		return lista_pf;
 	}
 
 	@Override
-	void correrConCriterio1() {
+	void correrConCriterioDeParo1() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	void correrConCriterio2() {
+	void correrConCriterioDeParo2() {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+	
 
 
 	

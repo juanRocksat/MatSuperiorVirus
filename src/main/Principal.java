@@ -33,16 +33,8 @@ public class Principal {
 				return (double)((Math.pow(Math.E, x))-4+x);
 			}
 			@Override
-			public double f1(double x) {return 0;}
-			@Override
-			public double f2(double x) {return 0;}
-			@Override
-			public double f3(double x) {return 0;}
-			@Override
-			public double f4(double x) {
-				// TODO Auto-generated method stub
-				return 0;
-			}
+			public double f1(double x) {return 0;} //derivada primera
+			
 			@Override
 			public double g(double x) {
 				// TODO Auto-generated method stub
@@ -50,7 +42,7 @@ public class Principal {
 			}
 		};
 		Biseccion_v2 biseccion= new Biseccion_v2(datos);
-//		biseccion.mostrarResultadoParaTest();
+		biseccion.mostrarResultadoParaTest();
 		p.saludar("Hola");p.saludar("Hola");
 		p.saludar("Hola");p.saludar("Hola");
 		double x1 =datos.f(1); 
