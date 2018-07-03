@@ -1,5 +1,5 @@
 package main;
-import algoritmos.Biseccion_v2;
+import algoritmos.Biseccion;
 import algoritmos.NewtonRaphson;
 import algoritmos.PuntoFijo;
 import datos.Datos;
@@ -33,25 +33,32 @@ public class Principal {
 				return (double)((Math.pow(Math.E, x))-4+x);
 			}
 			@Override
-			public double f1(double x) {return 0;} //derivada primera
-			
+			public double f1(double x) {
+				return (double)( Math.pow(Math.E, x)+1);
+			} //derivada primera	
 			@Override
 			public double g(double x) {
 				// TODO Auto-generated method stub
 				return 0;
 			}
 		};
-		Biseccion_v2 biseccion= new Biseccion_v2(datos);
+		Biseccion biseccion= new Biseccion(datos);
+		NewtonRaphson nR =new NewtonRaphson(datos, 1);
 //		try {
 //			biseccion.mostrarResultadoParaTest();
 //		} catch (Exception e) {
 //		}
-		biseccion.mostrarResultadoParaTest();
-
-		p.saludar("Hola");p.saludar("Hola");
-		p.saludar("Hola");p.saludar("Hola");
-		double x1 =datos.f(1); 
+		p.saludar(" biseccion comenzando");
+		biseccion.mostrarResultadoParaTest1();
+		p.saludar(" biseccion terminado");
+		biseccion.mostrarResultadoParaTest2();
+		p.saludar(" biseccion terminado");
+		double x1 =datos.f1(1); 
 		p.saludar(Double.toString(x1));
+		nR.mostrarResultadoParaTest2();
+		p.saludar("Hola");p.saludar("Hola");
+
+		
 	}
 	
 	

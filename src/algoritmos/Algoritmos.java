@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import datos.Datos;
 import datos.ListaDeDatos;
+import main.Principal;
 
 public abstract class Algoritmos {
 	int n=0;
@@ -15,8 +16,28 @@ public abstract class Algoritmos {
 	public ArrayList<String> lista_de_xn=new ArrayList<String>(),lista_de_n=new ArrayList<String>(),lista_de_f_xn=new ArrayList<String>();
 	
 		
-	abstract public void correrConCriterioDeParo1();
-	abstract public void correrConCriterioDeParo2();
+	public	void correrConCriterioDeParo1() {
+		this.preparar();
+		this.registrarIteracion();
+		while (this.criterioDeParo1()) {
+			this.calcularProximo();
+			this.registrarIteracion();
+			}
+	}
+	public	void correrConCriterioDeParo1_v2() {  //igual a la anterior	
+		for ( this.preparar();this.criterioDeParo1();this.calcularProximo()) {
+			this.registrarIteracion();
+		}
+		this.registrarIteracion();
+	}
+	public	void correrConCriterioDeParo2() {
+		this.preparar();
+		this.registrarIteracion();
+		while (this.criterioDeParo2()) {
+			calcularProximo();
+			registrarIteracion();
+			}
+	}
 	public void preparar() {
 	};
 	
@@ -42,7 +63,29 @@ public abstract class Algoritmos {
 		lista_de_xn.add(Double.toString( this.xn));
 		lista_de_f_xn.add(Double.toString( this.f_xn));
 	}
-	
+	public void mostrarResultadoParaTest1() {
+		this.correrConCriterioDeParo1();
+//		if (lista_de_n==null) {
+//			(new Principal()).saludar("Lista nula ");
+//		}
+//		else {
+//			int cant = lista_de_n.size();
+//			for (int i = 0; i < cant; i++) {
+//				System.out.println("("+lista_de_n.get(i)+","+lista_de_xn.get(i)+","+lista_de_f_xn.get(i)+")");		
+//			}
+//		}
+		int cant = lista_de_n.size();
+		for (int i = 0; i < cant; i++) {
+			System.out.println("("+lista_de_n.get(i)+","+lista_de_xn.get(i)+","+lista_de_f_xn.get(i)+")");		
+		}
+	}
+	public void mostrarResultadoParaTest2() {
+		this.correrConCriterioDeParo2();
+		int cant = lista_de_n.size();
+		for (int i = 0; i < cant; i++) {
+			System.out.println("("+lista_de_n.get(i)+","+lista_de_xn.get(i)+","+lista_de_f_xn.get(i)+")");		
+			}
+		}
 	
 	
 	
@@ -102,6 +145,24 @@ public abstract class Algoritmos {
 	}
 	public void setDatos(Datos datos) {
 		this.datos = datos;
+	}
+	public ArrayList<String> getLista_de_xn() {
+		return lista_de_xn;
+	}
+	public void setLista_de_xn(ArrayList<String> lista_de_xn) {
+		this.lista_de_xn = lista_de_xn;
+	}
+	public ArrayList<String> getLista_de_n() {
+		return lista_de_n;
+	}
+	public void setLista_de_n(ArrayList<String> lista_de_n) {
+		this.lista_de_n = lista_de_n;
+	}
+	public ArrayList<String> getLista_de_f_xn() {
+		return lista_de_f_xn;
+	}
+	public void setLista_de_f_xn(ArrayList<String> lista_de_f_xn) {
+		this.lista_de_f_xn = lista_de_f_xn;
 	}
 
 	
