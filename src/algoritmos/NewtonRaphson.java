@@ -1,13 +1,18 @@
 package algoritmos;
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+
 import datos.Datos;
 import datos.ListaDeDatos;
+import registro_de_iteracion.Iteracion;
 
 public class NewtonRaphson extends Algoritmos{
-
-	public NewtonRaphson(Datos datos) {
 	
+	double x0;
+	public NewtonRaphson(Datos datos_ ,double x0_ ) {
+		super(datos_);
+		this.x0=x0_;
 	}
-
 	@Override
 	void preparar() {
 		// TODO Auto-generated method stub
@@ -23,22 +28,19 @@ public class NewtonRaphson extends Algoritmos{
 	@Override
 	ListaDeDatos getDatos() {
 		ListaDeDatos lista_pf=new ListaDeDatos("PuntoFijo");
-		lista_pf.getListaDeCriterio1().addAll(this.getLista_criterio1());
-		lista_pf.getListaDeCriterio2().addAll(this.getLista_criterio2());
 		return lista_pf;
 	}
-
 	@Override
-	void correrConCriterio1() {
+	ArrayList<Iteracion> correrConCriterioDeParo1(ArrayList<Iteracion> iteracionCriterio1) {
 		// TODO Auto-generated method stub
-		
+		return null;
+	}
+	@Override
+	ArrayList<Iteracion> correrConCriterioDeParo2(ArrayList<Iteracion> iteracionCriterio2) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	@Override
-	void correrConCriterio2() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	
 	

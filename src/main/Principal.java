@@ -22,7 +22,7 @@ public class Principal {
 //		NewtonRaphson newtonR = new NewtonRaphson(datos);
 //		PuntoFijo puntoFijo = new PuntoFijo(datos);
 //	}
-	private void saludar(String saludo) {
+	public void saludar(String saludo) {
 		System.out.println(saludo); 
 	}
 	public static void main(String[] args) {
@@ -50,7 +50,7 @@ public class Principal {
 			}
 		};
 		Biseccion_v2 biseccion= new Biseccion_v2(datos);
-		biseccion.mostrarResultadoParaTest();
+//		biseccion.mostrarResultadoParaTest();
 		p.saludar("Hola");p.saludar("Hola");
 		p.saludar("Hola");p.saludar("Hola");
 		double x1 =datos.f(1); 
