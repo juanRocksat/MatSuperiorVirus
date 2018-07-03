@@ -10,11 +10,11 @@ public class NewtonRaphson extends Algoritmos{
 	
 	double x0;
 	public NewtonRaphson(Datos datos_ ,double x0_ ) {
-		super(datos_);
+		this.datos=datos_;
 		this.x0=x0_;
 	}
 	@Override
-	void preparar() {
+	public	void preparar() {
 		this.n=1;
 		this.xAnterior=this.x0; 
 		this.xn=this.x0+1;//para que no pare en la primera iteracion 
@@ -22,20 +22,20 @@ public class NewtonRaphson extends Algoritmos{
 	}
 
 	@Override
-	void calcularProximo() {
+	public 	void calcularProximo() {
 		this.xAnterior=this.xn;
 		this.xn=xAnterior-(datos.f(xAnterior)/datos.f1(xAnterior));
 	}
 
 	@Override
-	ListaDeDatos getDatos() {
+	public 	ListaDeDatos getDatos() {
 		ListaDeDatos lista_pf=new ListaDeDatos("PuntoFijo");
 		return lista_pf;
 	}
 	
 	@SuppressWarnings("null")
 	@Override
-	void correrConCriterioDeParo1() {
+	public 	void correrConCriterioDeParo1() {
 		ArrayList<Iteracion> iteracionCriterio1=null;//suprime algun error de este null, es lista vacia por eso el null
 		this.preparar();
 		iteracionCriterio1.add(new Iteracion(this.n, this.xn, this.f_xn));
@@ -47,7 +47,7 @@ public class NewtonRaphson extends Algoritmos{
 	}
 	@SuppressWarnings("null")
 	@Override
-	void correrConCriterioDeParo2() {
+	public 	void correrConCriterioDeParo2() {
 		ArrayList<Iteracion> iteracionCriterio2=null;
 		this.preparar();
 		iteracionCriterio2.add(new Iteracion(this.n, this.xn, this.f_xn));

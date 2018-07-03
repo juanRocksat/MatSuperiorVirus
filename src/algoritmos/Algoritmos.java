@@ -8,34 +8,40 @@ import datos.Datos;
 import datos.ListaDeDatos;
 
 public abstract class Algoritmos {
-	public double n=0,xn,cotaInferior=0,cotaSuperior=0,xAnterior=0,cotaDeError=0;
-	public double f_xn;
+	int n=0;
+	public double xn=0,cotaInferior=0,cotaSuperior=0,xAnterior=0,cotaDeError=0;
+	public double f_xn=0;
 	public Datos datos=null;
-	public ArrayList<Integer>  lista_de_n=null ;
-	public ArrayList<Double> lista_de_xn=null,lista_de_f_xn=null;
-	public Algoritmos(Datos _datos) {
-		this.datos=_datos;
-	}
-//	abstract void correr();
-	abstract void correrConCriterioDeParo1();
-	abstract void correrConCriterioDeParo2();
-	abstract void preparar();
+	public ArrayList<String> lista_de_xn=new ArrayList<String>(),lista_de_n=new ArrayList<String>(),lista_de_f_xn=new ArrayList<String>();
 	
-	abstract void calcularProximo() ;
+		
+	abstract public void correrConCriterioDeParo1();
+	abstract public void correrConCriterioDeParo2();
+	public void preparar() {
+	};
 	
-	public boolean criterioDeParo1() {
+	abstract public void calcularProximo();
+	
+	public  boolean criterioDeParo1() {
 		return !(this.cotaDeError>Math.abs(this.xAnterior-this.xn));// && this.getxAnterior()==(Double)null;
-//		return  this.cotaDeError>this.datos.f(xn);
 	}
-	public boolean criterioDeParo2() {
+	public  boolean criterioDeParo2() {
 		return  !(this.cotaDeError>Math.abs(this.f_xn));
 	}
-	public boolean signosIguales(double a , double b) {
+	public  boolean signosIguales(double a , double b) {
 		float a_=(float)a;
 		float b_=(float)b;
 		return a_*b_>0;
 	}
-	abstract ListaDeDatos getDatos();
+	public ListaDeDatos getDatos() {
+		return null;
+		
+	};
+	public  void registrarIteracion() {
+		lista_de_n.add( Integer.toString( this.n));
+		lista_de_xn.add(Double.toString( this.xn));
+		lista_de_f_xn.add(Double.toString( this.f_xn));
+	}
 	
 	
 	
@@ -79,7 +85,7 @@ public abstract class Algoritmos {
 	public double getN() {
 		return n;
 	}
-	public void setN(double n) {
+	public void setN(int n) {
 		this.n = n;
 	}
 	public double getCotaDeError() {

@@ -9,41 +9,36 @@ import registro_de_iteracion.Iteracion;
 public class PuntoFijo extends Algoritmos{
 	
 
-	public PuntoFijo(Datos _datos) {
-		super(_datos);
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
-	void preparar() {
+	public 	void preparar() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	void calcularProximo() {
+	public	void calcularProximo() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	ListaDeDatos getDatos() {
+	public 	ListaDeDatos getDatos() {
 		ListaDeDatos lista_pf=new ListaDeDatos("PuntoFijo");
 		return lista_pf;
 	}
 
 	@Override
-	void correrConCriterioDeParo1() {
+	public	void correrConCriterioDeParo1() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	void correrConCriterioDeParo2() {
+	public	void correrConCriterioDeParo2() {
 		// TODO Auto-generated method stub
 		
 	}
-
 
 
 	

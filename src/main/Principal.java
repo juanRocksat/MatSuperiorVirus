@@ -25,9 +25,9 @@ public class Principal {
 	public void saludar(String saludo) {
 		System.out.println(saludo); 
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException{
 		Principal p =new Principal();
-		Datos datos=new Datos((double)1,(double)2,(double)1e-2) {
+		Datos datos=new Datos((double)1,(double)2,(double)1e-3) {
 			@Override
 			public double f(double x) {
 				return (double)((Math.pow(Math.E, x))-4+x);
@@ -42,7 +42,12 @@ public class Principal {
 			}
 		};
 		Biseccion_v2 biseccion= new Biseccion_v2(datos);
+//		try {
+//			biseccion.mostrarResultadoParaTest();
+//		} catch (Exception e) {
+//		}
 		biseccion.mostrarResultadoParaTest();
+
 		p.saludar("Hola");p.saludar("Hola");
 		p.saludar("Hola");p.saludar("Hola");
 		double x1 =datos.f(1); 
