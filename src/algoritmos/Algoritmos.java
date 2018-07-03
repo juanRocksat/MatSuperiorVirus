@@ -1,5 +1,7 @@
 package algoritmos;
 
+import java.awt.List;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import datos.Datos;
@@ -9,8 +11,8 @@ public abstract class Algoritmos {
 	public double n=0,xn,cotaInferior=0,cotaSuperior=0,xAnterior=0,cotaDeError=0;
 	public double f_xn;
 	public Datos datos=null;
-	public ArrayList<Integer>  lista_de_n=null;
-	public ArrayList<Double> lista_de_xn=null,lista_de_f_xn;
+	public ArrayList<Integer>  lista_de_n=null ;
+	public ArrayList<Double> lista_de_xn=null,lista_de_f_xn=null;
 	public Algoritmos(Datos _datos) {
 		this.datos=_datos;
 	}

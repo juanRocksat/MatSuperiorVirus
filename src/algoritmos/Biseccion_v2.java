@@ -52,7 +52,7 @@ public class Biseccion_v2 extends Algoritmos{
 			(new Principal()).saludar("Lista nula ");
 		}
 		else {
-			int cant = lista_de_f_xn.size();
+			int cant = lista_de_n.size();
 			for (int i = 1; i < cant; i++) {
 //				Iteracion registro = iteracionCriterio.get(i);
 				System.out.println("("+lista_de_n.get(i)+","+lista_de_xn.get(i)+","+lista_de_f_xn.get(i)+")");		
