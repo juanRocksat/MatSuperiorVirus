@@ -12,62 +12,67 @@ import javax.swing.border.EmptyBorder;
 import algoritmos.Algoritmo;
 
 import javax.swing.JTable;
+import javax.swing.JScrollBar;
+import java.awt.ScrollPane;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.CardLayout;
+import javax.swing.BoxLayout;
 
 public class Tabla extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
 	public Object[][] data; 
-	JScrollPane scrollPane =null;
-
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Tabla frame = new Tabla();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public JScrollPane scrollPane =null;
+	public Algoritmo algoritmo=null;
+	private JTable table_1;
+	public String nombreDeTabla;
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Tabla frame = new Tabla();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the frame.
 	 */
+//	public Tabla() {
+//		setTitle("TRABAJO PRACTICO MAT SUPERIOR");
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setBounds(100, 100, 450, 300);
+//		getContentPane().setLayout(null);
+//		
+//		table =crearTabla();
+//		
+//		
+//		 scrollPane_1 = new JScrollPane(table);
+//		 scrollPane_1.setBounds(0, 0, 434, 261);
+//		getContentPane().add(scrollPane_1);
+//		contentPane = new JPanel();
+//		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+//		setContentPane(contentPane);
+//		contentPane.setLayout(new BorderLayout(0, 0));	
+//	}
 	public Tabla() {
-		setTitle("TRABAJO PRACTICO MAT SUPERIOR");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(new BorderLayout(0, 0));
+		setBounds(100, 100, 290, 224);
+		getContentPane().setLayout(new BorderLayout(0, 0));
 		
-		table =crearTabla();
-		contentPane.add(table);
-		
-		table.setBounds(197, 62, 145, 120);
-		contentPane.add(table);
-		
-		scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(22, 62, 330, 120);
-		contentPane.add(scrollPane);
-		
-		
-		scrollPane.setViewportView(table); // 22:36
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5)); // 22:36
-	
-		
-		setVisible(true);
+		table_1 = crearTabla();
+		getContentPane().add(table_1, BorderLayout.WEST);
+		scrollPane = new JScrollPane(table_1);
+		getContentPane().add(scrollPane, BorderLayout.CENTER);
 	}
 
 	private JTable crearTabla() {
-		 data= crearMatrizDeNumeros1();
+		 data= crearMatrizEjemplo();
 	     String[] columnNames = {"n","xn","f(xn)"};
 	    return new JTable(data, columnNames);
 	}
@@ -92,7 +97,7 @@ public class Tabla extends JFrame {
 		}
 		return matriz;
 	}
-	public Object[][] crearMatrizDeNumeros_1(Algoritmo algoritmo) {
+	public Object[][] crearMatrizDeNumeros_criterio1(Algoritmo algoritmo) {
 		algoritmo.correrConCriterioDeParo1();
 		ArrayList<String> lista_de_n=algoritmo.getLista_de_n();
 		ArrayList<String> lista_de_xn=algoritmo.getLista_de_xn();
@@ -107,12 +112,59 @@ public class Tabla extends JFrame {
 		}
 		return matriz;
 	}
-	public static void main(String[] args) {
+	public Object[][] crearMatrizEjemplo() {
+		
 		Object[][] aux ={
-			{1,"uno","x"},
-			{2,"dos","y"},
-			{3,"tres","z"}		};
-		System.out.println(aux);
+				{1,"uno","x"},
+				{2,"dos","y"},
+				{3,"tres","z"},
+				{1,"uno","x"},
+				{2,"dos","y"},
+				{1,"uno","x"},
+				{2,"dos","y"},
+				{1,"uno","x"},
+				{2,"dos","y"},
+				{1,"uno","x"},
+				{2,"dos","y"},
+				};
+		return aux;
+	}
+//	public static void main(String[] args) {
+//		Object[][] aux ={
+//			{1,"uno","x"},
+//			{2,"dos","y"},
+//			{3,"tres","z"}		};
+//		System.out.println(aux);
+//	}
+
+	public void setContentPane(JPanel contentPane) {
+		this.contentPane = contentPane;
+	}
+
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+
+	public Object[][] getData() {
+		return data;
+	}
+
+	public void setData(Object[][] data) {
+		this.data = data;
+	}
+
+
+
+	public Algoritmo getAlgoritmo() {
+		return algoritmo;
+	}
+
+	public void setAlgoritmo(Algoritmo algoritmo) {
+		this.algoritmo = algoritmo;
 	}
 }
 	
