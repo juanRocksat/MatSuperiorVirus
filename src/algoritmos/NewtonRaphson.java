@@ -77,14 +77,9 @@ public class NewtonRaphson extends Algoritmo{
 //			biseccion.mostrarResultadoParaTest();
 //		} catch (Exception e) {
 //		}
-		p.saludar(" biseccion comenzando");
-		p.saludar(" biseccion terminado");
-		p.saludar(" biseccion terminado");
 		double x1 =datos.f1(1); 
-		p.saludar(Double.toString(x1));
 		nR.mostrarResultadoParaTest2();
 
-		p.saludar("Hola");p.saludar("criterio1 ");
 
 	
 		}

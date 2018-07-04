@@ -13,8 +13,7 @@ public class Principal {
 			}
 			@Override
 			public double f1(double x) {
-				return Math.pow(Math.E, x)+1; //derivada primera de f(x)
-				
+				return Math.pow(Math.E, x)+1; //derivada primera de f(x)			
 			}
 			@Override
 			public double g(double x) {
@@ -26,13 +25,6 @@ public class Principal {
 		PuntoFijo puntoFijo = new PuntoFijo(ejemplo,1);
 		biseccion.mostrarTabla_criterio2();
 		newtonR.mostrarTabla_criterio2();
-		puntoFijo.mostrarTabla_criterio2();
-		
-	}
-	public void saludar(String saludo) {
-		System.out.println(saludo); 
-	}
-	
-	
-	
+		puntoFijo.mostrarTabla_criterio2();	
+	}	
 }
