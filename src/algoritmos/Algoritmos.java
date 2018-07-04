@@ -65,15 +65,6 @@ public abstract class Algoritmos {
 	}
 	public void mostrarResultadoParaTest1() {
 		this.correrConCriterioDeParo1();
-//		if (lista_de_n==null) {
-//			(new Principal()).saludar("Lista nula ");
-//		}
-//		else {
-//			int cant = lista_de_n.size();
-//			for (int i = 0; i < cant; i++) {
-//				System.out.println("("+lista_de_n.get(i)+","+lista_de_xn.get(i)+","+lista_de_f_xn.get(i)+")");		
-//			}
-//		}
 		int cant = lista_de_n.size();
 		for (int i = 0; i < cant; i++) {
 			System.out.println("("+lista_de_n.get(i)+","+lista_de_xn.get(i)+","+lista_de_f_xn.get(i)+")");		
