@@ -71,11 +71,28 @@ public class Tabla extends JFrame {
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
 	}
 
+	public Tabla(Object[][] matrizDeResultados) {
+		setBounds(100, 100, 290, 224);
+		getContentPane().setLayout(new BorderLayout(0, 0));
+		
+		table_1 = crearTabla(matrizDeResultados);
+		getContentPane().add(table_1, BorderLayout.WEST);
+		scrollPane = new JScrollPane(table_1);
+		getContentPane().add(scrollPane, BorderLayout.CENTER);
+	}
+
+	private JTable crearTabla(Object[][] matrizDeResultados) {
+		data=matrizDeResultados;
+	     String[] columnNames = {"n","xn","f(xn)"};
+	    return new JTable(data, columnNames);
+	}
+
 	private JTable crearTabla() {
 		 data= crearMatrizEjemplo();
 	     String[] columnNames = {"n","xn","f(xn)"};
 	    return new JTable(data, columnNames);
 	}
+	
 	public Object[][] crearMatrizDeNumeros1(){
 		
 		Object[][] matriz =null;

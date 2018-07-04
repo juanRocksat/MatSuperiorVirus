@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import datos.Datos;
 import datos.ListaDeDatos;
 import main.Principal;
+import tabla.Tabla;
 
 public abstract class Algoritmo {
 	int n=0;
@@ -77,7 +78,25 @@ public abstract class Algoritmo {
 			System.out.println("("+lista_de_n.get(i)+","+lista_de_xn.get(i)+","+lista_de_f_xn.get(i)+")");		
 			}
 		}
-	
+	public  void mostrarTabla_criterio1() {
+		Tabla tabla = new Tabla(this.crearMatrizDeResultados_criterio1());
+		tabla.setVisible(true);
+	}
+	public Object[][] crearMatrizDeResultados_criterio1() {
+		this.correrConCriterioDeParo1();
+//		ArrayList<String> lista_de_n=this.getLista_de_n();
+//		ArrayList<String> lista_de_xn=this.getLista_de_xn();
+//		ArrayList<String> lista_de_f_xn=this.getLista_de_f_xn();
+		int cantFilas = lista_de_n.size();
+		int cantColumnas=2;
+		Object[][] matriz = new Object[cantFilas][3];
+		for (int i = 0; i < cantFilas; i++) {
+			 matriz[i][0] =this.lista_de_n.get(i);
+			 matriz[i][1] =this.lista_de_xn.get(i);
+			 matriz[i][2] =this.lista_de_f_xn.get(i);		
+		}
+		return matriz;
+	}
 	
 	
 	//ACCESORS
