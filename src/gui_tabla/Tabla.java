@@ -72,6 +72,7 @@ public class Tabla extends JFrame {
 	}
 
 	public Tabla(Object[][] matrizDeResultados) {
+		
 		setBounds(100, 100, 290, 224);
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		

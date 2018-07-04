@@ -8,12 +8,12 @@ public class Principal {
 	public static void main(String[] args) {
 		Datos ejemplo=new Datos(1,2,(double)1e-4) {
 			@Override
-			public double f(double x) {
+			public double f(double x) {//f(x)
 				return (double)((Math.pow(Math.E, x))+x-4);
 			}
 			@Override
 			public double f1(double x) {
-				return Math.pow(Math.E, x)+1; //derivada primera de f+
+				return Math.pow(Math.E, x)+1; //derivada primera de f(x)
 				
 			}
 			@Override
