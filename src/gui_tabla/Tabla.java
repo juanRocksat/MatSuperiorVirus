@@ -1,4 +1,4 @@
-package tabla;
+package gui_tabla;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

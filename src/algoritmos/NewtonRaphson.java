@@ -3,9 +3,7 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 
 import datos.Datos;
-import datos.ListaDeDatos;
 import principal.Principal;
-import registro_de_iteracion.Iteracion;
 
 public class NewtonRaphson extends Algoritmo{
 	public double x0;
@@ -57,13 +55,7 @@ public class NewtonRaphson extends Algoritmo{
 		return this.datos.g(x);
 	}
 
-	
 
-	@Override
-	public 	ListaDeDatos getDatos() {
-		ListaDeDatos lista_pf=new ListaDeDatos("PuntoFijo");
-		return lista_pf;
-	}
 	public static void main(String[] args) throws InterruptedException{
 		Principal p =new Principal();
 		Datos datos=new Datos((double)2,(double)2.1,(double)1e-4) {

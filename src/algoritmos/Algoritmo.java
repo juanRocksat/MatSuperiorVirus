@@ -5,9 +5,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import datos.Datos;
-import datos.ListaDeDatos;
+import gui_tabla.Tabla;
 import principal.Principal;
-import tabla.Tabla;
 
 public abstract class Algoritmo {
 	int n=0;
@@ -55,10 +54,7 @@ public abstract class Algoritmo {
 		float b_=(float)b;
 		return a_*b_>0;
 	}
-	public ListaDeDatos getDatos() {
-		return null;
-		
-	};
+	
 	public  void registrarIteracion() {
 		lista_de_n.add( Integer.toString( this.n));
 		lista_de_xn.add(Double.toString( this.xn));

@@ -3,9 +3,7 @@ package algoritmos;
 import java.util.ArrayList;
 
 import datos.Datos;
-import datos.ListaDeDatos;
 import principal.Principal;
-import registro_de_iteracion.Iteracion;
 
 public class PuntoFijo extends Algoritmo{
 	public double x0;
@@ -14,12 +12,6 @@ public class PuntoFijo extends Algoritmo{
 		this.datos=datos_;
 		this.x0=x0_;
 		this.cotaDeError=this.datos.getCotaDeError();
-	}
-
-	@Override
-	public 	ListaDeDatos getDatos() {
-		ListaDeDatos lista_pf=new ListaDeDatos("PuntoFijo");
-		return lista_pf;
 	}
 
 	@Override

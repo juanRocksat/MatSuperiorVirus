@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import datos.Datos;
-import datos.ListaDeDatos;
 import principal.Principal;
-import registro_de_iteracion.Iteracion;
 
 public class Biseccion extends Algoritmo{
 	
