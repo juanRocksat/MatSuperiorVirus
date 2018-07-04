@@ -8,7 +8,7 @@ import datos.Datos;
 import datos.ListaDeDatos;
 import main.Principal;
 
-public abstract class Algoritmos {
+public abstract class Algoritmo {
 	int n=0;
 	public double xn=0,cotaInferior=0,cotaSuperior=0,xAnterior=0,cotaDeError=0;
 	public double f_xn=0;

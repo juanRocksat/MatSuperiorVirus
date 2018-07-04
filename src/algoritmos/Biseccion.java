@@ -9,7 +9,7 @@ import datos.ListaDeDatos;
 import main.Principal;
 import registro_de_iteracion.Iteracion;
 
-public class Biseccion extends Algoritmos{
+public class Biseccion extends Algoritmo{
 	
 	
 	public Biseccion(Datos _datos) {

@@ -7,7 +7,7 @@ import datos.ListaDeDatos;
 import main.Principal;
 import registro_de_iteracion.Iteracion;
 
-public class NewtonRaphson extends Algoritmos{
+public class NewtonRaphson extends Algoritmo{
 	public double x0;
 	public NewtonRaphson(Datos datos_ ,double x0_ ) {
 		this.datos=datos_;

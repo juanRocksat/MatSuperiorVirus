@@ -7,7 +7,7 @@ import datos.ListaDeDatos;
 import main.Principal;
 import registro_de_iteracion.Iteracion;
 
-public class PuntoFijo extends Algoritmos{
+public class PuntoFijo extends Algoritmo{
 	public double x0;
 
 	public PuntoFijo(Datos datos_, double x0_) {
