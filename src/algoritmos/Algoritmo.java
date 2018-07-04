@@ -81,7 +81,29 @@ public abstract class Algoritmo {
 	public  void mostrarTabla_criterio1() {
 		Tabla tabla = new Tabla(this.crearMatrizDeResultados_criterio1());
 		tabla.setVisible(true);
+		tabla.setTitle(this.getClass().getSimpleName());
 	}
+	public  void mostrarTabla_criterio2() {
+		Tabla tabla = new Tabla(this.crearMatrizDeResultados_criterio2());
+		tabla.setVisible(true);
+		tabla.setTitle(this.getClass().getSimpleName());
+	}
+	public Object[][] crearMatrizDeResultados_criterio2() {
+		this.correrConCriterioDeParo2();
+//		ArrayList<String> lista_de_n=this.getLista_de_n();
+//		ArrayList<String> lista_de_xn=this.getLista_de_xn();
+//		ArrayList<String> lista_de_f_xn=this.getLista_de_f_xn();
+		int cantFilas = lista_de_n.size();
+		int cantColumnas=2;
+		Object[][] matriz = new Object[cantFilas][3];
+		for (int i = 0; i < cantFilas; i++) {
+			 matriz[i][0] =this.lista_de_n.get(i);
+			 matriz[i][1] =this.lista_de_xn.get(i);
+			 matriz[i][2] =this.lista_de_f_xn.get(i);		
+		}
+		return matriz;
+	}
+	
 	public Object[][] crearMatrizDeResultados_criterio1() {
 		this.correrConCriterioDeParo1();
 //		ArrayList<String> lista_de_n=this.getLista_de_n();

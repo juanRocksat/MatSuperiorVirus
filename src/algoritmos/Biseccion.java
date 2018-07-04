@@ -1,5 +1,6 @@
 package algoritmos;
 
+import java.awt.JobAttributes.SidesType;
 import java.awt.List;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,7 +12,8 @@ import registro_de_iteracion.Iteracion;
 
 public class Biseccion extends Algoritmo{
 	
-	
+	public Biseccion() {
+	}
 	public Biseccion(Datos _datos) {
 		this.datos=_datos;
 	}
@@ -41,10 +43,13 @@ public class Biseccion extends Algoritmo{
 	}
 
 	
-	@Override
-	public 	ListaDeDatos getDatos() {
-		ListaDeDatos lista_pf=new ListaDeDatos("Biseccion");
-		return lista_pf;
+	public static void main(String[] args) {
+		Biseccion b = new Biseccion();
+		System.out.println(b.toString());
+		System.out.println(b.getClass().getName());
+		System.out.println(b.getClass().getSimpleName());
+		
+		
 	}
 	
 

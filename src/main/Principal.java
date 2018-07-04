@@ -6,7 +6,7 @@ import datos.Datos;
 
 public class Principal {
 	public static void main(String[] args) {
-		Datos ejemplo=new Datos(1,2,(double)1e-3) {
+		Datos ejemplo=new Datos(1,2,(double)1e-4) {
 			@Override
 			public double f(double x) {
 				return (double)((Math.pow(Math.E, x))+x-4);
@@ -24,9 +24,9 @@ public class Principal {
 		Biseccion biseccion= new Biseccion(ejemplo);
 		NewtonRaphson newtonR = new NewtonRaphson(ejemplo,1);
 		PuntoFijo puntoFijo = new PuntoFijo(ejemplo,1);
-		biseccion.mostrarTabla_criterio1();
-		newtonR.mostrarTabla_criterio1();
-		puntoFijo.mostrarTabla_criterio1();
+		biseccion.mostrarTabla_criterio2();
+		newtonR.mostrarTabla_criterio2();
+		puntoFijo.mostrarTabla_criterio2();
 		
 	}
 	public void saludar(String saludo) {
