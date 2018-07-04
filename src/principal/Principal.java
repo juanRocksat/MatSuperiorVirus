@@ -1,4 +1,4 @@
-package main;
+package principal;
 import algoritmos.Biseccion;
 import algoritmos.NewtonRaphson;
 import algoritmos.PuntoFijo;

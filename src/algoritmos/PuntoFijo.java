@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import datos.Datos;
 import datos.ListaDeDatos;
-import main.Principal;
+import principal.Principal;
 import registro_de_iteracion.Iteracion;
 
 public class PuntoFijo extends Algoritmo{

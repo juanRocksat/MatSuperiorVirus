@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import datos.Datos;
 import datos.ListaDeDatos;
-import main.Principal;
+import principal.Principal;
 import tabla.Tabla;
 
 public abstract class Algoritmo {
